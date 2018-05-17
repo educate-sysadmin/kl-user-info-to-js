@@ -34,7 +34,7 @@ function kl_user_info_to_js() {
     foreach ($roles as $role) {
        $roles_output .= '"'.$role.'"'.',';
     }
-    if (count($roles) > 0) {
+    if (substr($roles_output,strlen($roles_output)-1) == ',') {
         $roles_output = substr($roles_output,0,strlen($roles_output)-1); // remove final comma
     }
     $roles_output .= '];';
